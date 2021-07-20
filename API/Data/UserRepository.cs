@@ -41,14 +41,9 @@ namespace API.Data
                             .SingleOrDefaultAsync(x => x.UserName == username);
         }
 
-        public async Task<bool> SaveAllAsync(AppUser user)
+        public async Task<bool> SaveAllAsync()
         {
             return await this._context.SaveChangesAsync() > 0;
-        }
-
-        public Task<bool> SaveAllAsync()
-        {
-            throw new System.NotImplementedException();
         }
 
         public void Update(AppUser user)
